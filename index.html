@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churrasco do Passo</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+           
+   *{margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: .50;
+    }
+
+    :root{
+    --color-brown-transparent: #cd82505d;
+    --color-brown: #CD8150;
+    --color-white: #FFFFFF;
+    --color-black: #111111;
+    }
+
+    /* HEADER */
+
+    header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-black);
+    padding: 30px;
+    }
+
+    #logo{
+    font-size: large;
+    }
+
+    .nome > h1{
+    color: var(--color-white);
+    }
+
+    .conteinaer-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    }
+
+    input{
+    width: 588px;
+    height: 48px;
+    }
+
+    .background{
+    background: rgb(0, 0, 0) url(/img/backgrond.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    }
+
+    .background-fundo{
+    width: 100%;
+    height: 500px;
+    background-color: var(--color-brown-transparent);
+    }
+
+    nav {
+    display: inline-flex;
+    }
+
+    .nav-bar > ul > li {
+    display: inline;
+    font-size: 23px;
+    }
+
+    .nav-bar > ul > li > a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: var(--color-white);
+    font-weight: bold;
+    transition: 0.5s ease;
+    }
+
+    .nav-bar > ul > li > a:hover,
+    .nav-bar > ul > li > .active {
+    color: #CD8150;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border-radius: 5px;
+    }
+
+    .button-cls > button {
+    padding: 10px;
+    background-color: var(--color-brown);
+    border: none;
+    font-size: 23px;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: 0.5s ease;
+    }
+
+    .button-cls > button:hover {
+    transform: scale(1.05);
+    }
+
+    /* TÍTULO DE ENTRADA*/
+    .text{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,60%);
+    font-weight: bolder;
+    font-size: 50px;
+    color: var(--color-white);
+    }
+
+    /* APRESENTAÇÃO DO PROJETO */
+
+    /* TÍTULO 1*/
+    #cardapio > h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0 30px;
+    }
+
+    /* FOTOS DO PRODUTO MAIN */
+    #cardapio .espetinhos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* Se quiser que fique em linha única */
+    padding: 20px 0;
+    }
+
+    /* ESPETINHOS - IMAGENS */
+    #cardapio .corte1,
+    #cardapio .corte2,
+    #cardapio .corte3 {
+    width: 300px;
+    height: 800px;
+    background-color: var(--color-black);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: width 0.5s ease;
+    }
+
+    #cardapio .corte1 {
+    background-image: url(/img/coração.webp);
+    background-position: left;
+    }
+
+    #cardapio .corte2 {
+    background-image: url(/img/tulipa-frango.webp);
+    }
+
+    #cardapio .corte3 {
+    background-image: url(/img/mixto.jpg);
+    background-position: right;
+    }
+
+    #cardapio .corte1 .img-espetos h1{
+    position: absolute;
+    bottom: 50%;
+    width: 300px;
+    text-align: center;
+    color: var(--color-white);
+    background: var(--color-brown-transparent);
+    font-weight: 700;
+    font-size: 60px;
+    }
+
+    #cardapio .corte2 .img-espetos h1{
+    position: absolute;
+    bottom: 50%;
+    width: 300px;
+    text-align: center;
+    color: var(--color-white);
+    background: var(--color-brown-transparent);
+    font-weight: 700;
+    font-size: 60px;
+    }
+
+    #cardapio .corte3 .img-espetos h1{
+    position: absolute;
+    bottom: 50%;
+    width: 300px;
+    text-align: center;
+    color: var(--color-white);
+    background: var(--color-brown-transparent);
+    font-weight: 700;
+    font-size: 60px;
+    }
+
+    /* HOVER */
+    #cardapio .corte1:hover,
+    #cardapio .corte2:hover,
+    #cardapio .corte3:hover {
+    width: 600px;
+    }
+
+    /* TÍTULO SOBRE AS IMAGENS */
+    #cardapio .corte1::after,
+    #cardapio .corte2::after,
+    #cardapio .corte3::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    font-size: 24px;
+    background-color: var(--color-brown-transparent);
+    text-align: center;
+    }
+
+
+
+    /* ANIMAÇÃO ENTRADA */
+
+
+    .conteudo{
+    margin: auto;
+    width: 1000px;
+    padding-top: 30px;
+    font-weight: 100;
+    }
+
+    .conteudo > h1{
+    font-weight: 100;
+    }
+
+
+    @keyframes slidein {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+        }
+        to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+        }
+
+        .corte1, .corte2, .corte3 {
+            animation: slidein 0.5s ease-in-out;
+            }
+            
+            /* Telas grandes (ex: desktops acima de 1200px) */
+    /* Oculta o botão em telas maiores */
+    .menu-btn {
+    display: none;
+    font-size: 80px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    }
+
+    /* Menu mobile */
+    @media (max-width: 767px) {
+    .menu-btn {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    }
+
+    .nav-bar {
+        display: none;
+        width: 100%;
+        background-color: var(--color-black);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 999;
+    }
+
+    .nav-bar.active {
+        display: flex;
+    }
+
+    .nav-bar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .nav-bar ul li {
+        margin: 10px 0;
+    }
+
+
+    .enderecos{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .enderecos-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    }
+
+    .endereco {
+    display: flex;
+    flex: 1 1 300px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    }
+
+    .enderecos-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+    }
+
+    .endereco {
+    flex: 1 1 300px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+    
+    }}
+
+        .espetinhos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .img-espetos {
+            text-align: center;
+            background: #f2f2f2;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .enderecos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 30px;
+        }
+
+        .endereco-box {
+            background: var(--color-brown);
+            color: var(--color-white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        footer {
+            color: var(--color-white);
+            text-align: center;
+            background: var(--color-brown);
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="conteinaer-header">
+            <div id="logo"><img src="img/logo.png" alt="logo-cabelo" width="150"></div>
+        </div>
+
+        <div class="nome"><h1>CHURRASCO DO PASSO</h1></div>
+
+        <button id="menu-toggle" class="menu-btn">&#9776;</button>
+
+        <nav>
+            <div class="nav-bar" id="nav-menu">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="background">
+            <div class="background-fundo"></div>
+            <div class="text">TEMOS ESPETINHOS VARIADOS</div>
+        </div>
+
+        <div id="cardapio" class="cardapio">
+            <h1 style="text-align: center;">CARDÁPIO</h1>
+            <div class="espetinhos" onclick="valor()">
+                <a href="#coracao">
+                    <div class="corte1">
+                        <div class="img-espetos">
+                            <h1>Coração</h1>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#tulipa">
+                    <div class="corte2">
+                        <div class="img-espetos">
+                            <h1>Tulípa</h1>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#mix">
+                    <div class="corte3">
+                        <div class="img-espetos">
+                            <h1>Mix</h1>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <main>
+
+            <!-- Endereço e horário lado a lado -->
+            <div class="enderecos">
+                <div class="endereco-box">
+                    <h2>ENDEREÇO</h2>
+                    <p>Rua Munhoz, 42</p>
+                </div>
+                <div class="endereco-box">
+                    <h2>HORÁRIOS DE ATENDIMENTO</h2>
+                    <p>Sexta a Domingo<br>18h às 22h</p>
+                </div>
+                <div class="endereco-box">
+                    <h2>ATENDIMENTO WATSAPP</h2>
+                    <p>11 94056-7033</p>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Música de fundo -->
+    <audio autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <footer>
+        <h3 style="padding: 30px; font-size: 50px;">
+    Nosso Local</h3>
+        <iframe src="https://www.google.com/maps?q=Rua%20Munhoz&output=embed" allowfullscreen></iframe>
+    </footer>
+
+    <audio autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
